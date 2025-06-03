@@ -2,6 +2,7 @@
 ## PROPIETARIOS DEL PROYECTO
 
 ANNY JOHANA MORENO LEUDO
+Agrega tu nombre
 
 ## Descripción
 
