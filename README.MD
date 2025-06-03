@@ -1,4 +1,7 @@
 # PROTOTIPO - Biblioteca UTCH
+## PROPIETARIOS DEL PROYECTO
+
+ANNY JOHANA MORENO LEUDO
 
 ## Descripción
 
