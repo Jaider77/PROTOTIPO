@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Programas Académicos</title>
+  <link rel="stylesheet" href="../css/tablaProgramaAcademico.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/encabezado.css" />
+  <link rel="stylesheet" href="../css/menu.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+  <div id="encabezado"></div>
+  <div id="menu"></div>
+
+  <section class="g1_tabla">
+    <div class="g_tabla">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3">REGISTRAR PROGRAMA ACADÉMICO</th>
+          </tr>
+        </thead>
+      </table>
+
+      <div class="buscador-container">
+        <div class="buscador-flex">
+          <input type="text" id="buscador" placeholder="Buscar programa..." />
+          <button onclick="filtrarTabla()">Buscar</button>
+        </div>
+      </div>
+
+      <table id="tablaUsuarios">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Programa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ingeniería de Sistemas</td>
+          </tr>
+          <tr>
+            <td class="vacio"></td>
+            <td class="vacio"></td>
+          </tr>
+          <tr>
+            <td class="vacio"></td>
+            <td class="vacio"></td>
+          </tr>
+          <tr>
+            <td class="vacio"></td>
+            <td class="vacio"></td>
+          </tr>
+          <tr>
+            <td class="vacio"></td>
+            <td class="vacio"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="buttons-bajos">
+        <button onclick="abrirModalAgregar()">Agregar</button>
+        <button onclick="abrirModalMostrar()">Mostrar</button>
+        <button onclick="abrirModalModificar()">Modificar</button>
+        <button onclick="abrirModalEliminar()">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- MODAL AGREGAR -->
+    <div id="modal" class="modal">
+      <div class="modal-agregar">
+        <h3>Agregar Programa Académico</h3>
+        <form id="formularioUsuario" class="form-agregar" onsubmit="return false;">
+          <input type="text" id="programaInput" placeholder="Nombre del Programa" required />
+          <div class="modal-buttons">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" onclick="cerrarModalAgregar()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL MOSTRAR -->
+    <div id="modalMostrar" class="modal">
+      <div class="modal-mostrar">
+        <h3>Detalle del Programa</h3>
+        <div class="info-grid">
+          <div class="info-item"><label>Programa:</label> <span id="mostrarPrograma"></span></div>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn-cerrar" onclick="cerrarModalMostrar()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL MODIFICAR -->
+    <div id="modalModificar" class="modal">
+      <div class="modal-modificar">
+        <h3>Modificar Programa</h3>
+        <form id="formularioModificar" class="form-modificar" onsubmit=" return false;">
+          <input type="text" id="inputPrograma" placeholder="Nombre del Programa" required />
+          <div class="modal-buttons">
+            <button type="submit" class="btn-modificar">Guardar cambios</button>
+            <button type="button" onclick="cerrarModalModificar()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal">
+      <div class="modal-eliminar">
+        <h3>¿Deseas eliminar este programa?</h3>
+        <p id="mensajeEliminar">Esta acción no se puede deshacer.</p>
+        <div class="modal-buttons">
+          <button class="btn-confirmar-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+          <button onclick="cerrarModalEliminar()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../js/componentes.js"></script>
+  <script src="../js/tablaProgramaAcademico.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

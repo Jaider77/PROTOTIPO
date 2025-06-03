@@ -1,0 +1,253 @@
+:root {
+  --header-height: 3.5rem;
+  --black-color: hsl(108, 29%, 35%);
+  --black-color-light: hsl(108, 29%, 30%);
+  --black-color-lighten: hsl(108, 29%, 40%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  --z-fixed: 100;
+}
+
+#main{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--black-color);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  z-index: var(--z-fixed);
+  
+}
+
+.header a {
+  text-decoration: none;
+}
+.header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.header .container {
+  max-width: 1200px;
+
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: block;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.nav__burger,
+.nav__close {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  transition: opacity 0.3s, transform 0.3s;
+  color: var(--white-color);
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Desktop Menu */
+
+
+
+.nav__toggle {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+
+.nav__link {
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+  
+}
+
+/* Dropdown */
+.dropdown__item {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--black-color-lighten);
+  border-radius: 0.5rem;
+  min-width: 150px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10;
+  
+}
+
+.dropdown__item:hover .dropdown__menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown__link {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--white-color);
+  text-align: left;
+}
+
+.dropdown__link:hover {
+  background-color: var(--black-color);
+  border-radius: 0.4rem;
+}
+
+/* Submenu */
+.dropdown__subitem {
+  position: relative;
+}
+
+.dropdown__submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateY(0);
+  background-color: var(--black-color-lighten);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+
+
+.dropdown__subitem:hover .dropdown__submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  
+}
+
+.dropdown__submenu:hover {
+  background-color: var(--black-color);
+}
+
+
+
+.dropdown__sublink {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--white-color);
+}
+
+.dropdown__sublink:hover {
+  background-color: var(--black-color-lighten);
+  border-radius: 0.4rem;
+}
+
+/* Icon Size Consistency */
+.nav__link i,
+.dropdown__link i,
+.dropdown__sublink i {
+  font-size: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav__list {
+    gap: 1rem;
+  }
+  .nav__link {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav__link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .dropdown__menu,
+  .dropdown__submenu {
+    left: auto;
+    right: 0;
+  }
+}

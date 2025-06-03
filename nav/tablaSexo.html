@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Básico/ Sexo</title>
+    <link rel="stylesheet" href="../css/tablaSexo.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/encabezado.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div id="encabezado"></div>
+
+    <div id="menu"></div>
+
+
+    <section class="g1_tabla">
+
+
+
+        <div class="g_tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="9">GESTIONAR SEXO</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- Buscador -->
+
+            <div class="buscador-container">
+                <div class="buscador-flex">
+                    <input type="text" id="buscador" placeholder="Buscar...">
+                    <button onclick="filtrarTabla()">Buscar</button>
+                </div>
+            </div>
+
+            </thead>
+            <tbody>
+                <table id="tablaSexo">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Maculino</td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Femenino</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Otros</td>
+                        </tr>
+                         <tr>
+                            <td class="vacio"></td>
+                            <td class="vacio"></td>
+					    </tr>
+                        <tr>
+                            <td class="vacio"></td>
+                            <td class="vacio"></td>
+                        </tr>
+                        <tr>
+                            <td class="vacio"></td>
+                            <td class="vacio"></td>
+                        </tr>
+                         <tr>
+                            <td class="vacio"></td>
+                            <td class="vacio"></td>
+					    </tr>
+                        <tr>
+                            <td class="vacio"></td>
+                            <td class="vacio"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="buttons-bajos">
+                    <button onclick="abrirModal()">Agregar</button>
+                    <button onclick="abrirModalMostrar()">Mostrar</button>
+                    <button onclick="abrirModalModificar()">Modificar</button>
+                    <button onclick="eliminarSexo()">Eliminar</button>
+                </div>
+        </div>
+
+        <!-- MODAL AGREGAR SEXO -->
+        <div id="modal" class="modal">
+            <div class="modal-agregar">
+                <h3>Agregar sexo</h3>
+                <form id="formularioSexo" class="form-agregar" onsubmit="return false;">
+                    <input type="text" placeholder="Agregar sexo" required>
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-guardar">Guardar</button>
+                        <button type="button" onclick="cerrarModal()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- MODAL MOSTRAR SEXO -->
+        <div id="modalMostrar" class="modal">
+            <div class="modal-mostrar">
+                <h2>Información</h2>
+                <div class="info-grid">
+                    <div class="info-item"><label>Sexo:</label><span id="mostrarNombre"></span></div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn-cerrar" onclick="cerrarModalMostrar()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL MODIFICAR SEXO -->
+        <div id="modalModificar" class="modal">
+            <div class="modal-modificar">
+                <h3>Sexo</h3>
+                <form id="formularioModificar" class="form-modificar">
+					<input id="inputNombre" type="text" placeholder="Nombre" required />
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-modificar">Guardar cambios</button>
+                        <button type="button" onclick="cerrarModalModificar()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- MODAL TIPO DE IDENTIFICACION-->
+        <div id="modalEliminar" class="modal">
+            <div class="modal-eliminar">
+                <h3>¿Deseas eliminar este sexo?</h3>
+                <p id="mensajeEliminar">Esta acción no se puede deshacer.</p>
+                <div class="modal-buttons">
+                    <button class="btn-confirmar-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+                    <button onclick="cerrarModalEliminar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../js/componentes.js"></script>
+    <script src="../js/tablaSexo.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

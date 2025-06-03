@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Básico/ Categoría Material</title>
+    <link rel="stylesheet" href="../css/tablaCategoriaMaterial.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/encabezado.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="encabezado"></div>
+    <div id="menu"></div>
+
+    <section class="g1_tabla">
+        <div class="g_tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="9">GESTIONAR CATEGORÍA MATERIAL</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- Buscador -->
+            <div class="buscador-container">
+                <div class="buscador-flex">
+                    <input type="text" id="buscador" placeholder="Buscar...">
+                    <button onclick="filtrarTablaCategoriaMaterial()">Buscar</button>
+                </div>
+            </div>
+
+            <table id="tablaCategoriaMaterial">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Literatura</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Historia</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Arte</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Tecnología</td>
+                    </tr>
+                    <tr>
+                        <td class="vacio"></td>
+                        <td class="vacio"></td>
+                    </tr>
+                    <tr>
+                        <td class="vacio"></td>
+                        <td class="vacio"></td>
+                    </tr>
+                    <tr>
+                        <td class="vacio"></td>
+                        <td class="vacio"></td>
+                    </tr>
+                    <tr>
+                        <td class="vacio"></td>
+                        <td class="vacio"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="buttons-bajos">
+                <button onclick="abrirModalCategoriaMaterial()">Agregar</button>
+                <button onclick="abrirModalMostrarCategoriaMaterial()">Mostrar</button>
+                <button onclick="abrirModalModificarCategoriaMaterial()">Modificar</button>
+                <button onclick="eliminarCategoriaMaterial()">Eliminar</button>
+            </div>
+        </div>
+
+        <!-- MODAL AGREGAR CATEGORÍA MATERIAL -->
+        <div id="modalCategoriaMaterial" class="modal">
+            <div class="modal-agregar">
+                <h3>Agregar categoría material</h3>
+                <form id="formularioCategoriaMaterial" class="form-agregar" onsubmit="return false;">
+                    <input type="text" placeholder="Agregar categoría material" required>
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-guardar">Guardar</button>
+                        <button type="button" onclick="cerrarModalCategoriaMaterial()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- MODAL MOSTRAR CATEGORÍA MATERIAL -->
+        <div id="modalMostrarCategoriaMaterial" class="modal">
+            <div class="modal-mostrar">
+                <h2>Información</h2>
+                <div class="info-grid">
+                    <div class="info-item"><label>Categoría Material:</label><span id="mostrarNombreCategoriaMaterial"></span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn-cerrar" onclick="cerrarModalMostrarCategoriaMaterial()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL MODIFICAR CATEGORÍA MATERIAL -->
+        <div id="modalModificarCategoriaMaterial" class="modal">
+            <div class="modal-modificar">
+                <h3>Categoría Material</h3>
+                <form id="formularioModificarCategoriaMaterial" class="form-modificar">
+                    <input id="inputNombreCategoriaMaterial" type="text" placeholder="Nombre" required />
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-modificar">Guardar cambios</button>
+                        <button type="button" onclick="cerrarModalModificarCategoriaMaterial()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- MODAL ELIMINAR CATEGORÍA MATERIAL -->
+        <div id="modalEliminarCategoriaMaterial" class="modal">
+            <div class="modal-eliminar">
+                <h3>¿Deseas eliminar esta categoría material?</h3>
+                <p id="mensajeEliminarCategoriaMaterial">Esta acción no se puede deshacer.</p>
+                <div class="modal-buttons">
+                    <button class="btn-confirmar-eliminar" onclick="confirmarEliminacionCategoriaMaterial()">Eliminar</button>
+                    <button onclick="cerrarModalEliminarCategoriaMaterial()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../js/componentes.js"></script>
+    <script src="../js/tablaCategoriaMaterial.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
